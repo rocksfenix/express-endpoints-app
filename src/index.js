@@ -2,15 +2,21 @@ const chalk = require('chalk')
 const listEndpoints = require('express-list-endpoints')
 const express = require('express')
 const getPort = require('get-port')
+const livereload = require('./live')
 
 const DEFAULT_PORT = 7070
 
 const run = async (wrappedExpressApp, port) => {
   const endPoints = listEndpoints(wrappedExpressApp)
   const app = express()
+  const portSocket = 35728
+
+  livereload(portSocket)
   
   // Will use 7070 if available, otherwise fall back to a random port
   const PORT = await getPort({ port: DEFAULT_PORT })
+  const host = 'localhost'
+  const reloadTimeout = 400
 
   // Build html File
   const htmlContens = `
@@ -46,12 +52,15 @@ const run = async (wrappedExpressApp, port) => {
           console.log(data)
         }
       }
+
+      document.write('<script src="//' + (location.host || '${host}').split(':')[0] + ':${portSocket}/livereload.js?snipver=1"></' + 'script>')
+      document.addEventListener('LiveReloadDisconnect', function() { setTimeout(function() { window.location.reload(); }, ${reloadTimeout}); })
     </script>
   </body>
   </html>
   `
   
-  app.get('/', (req, res) => {
+  app.get('*', (req, res) => {
     res.send(htmlContens)
   })
   
