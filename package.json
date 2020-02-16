@@ -1,0 +1,34 @@
+{
+  "name": "express-endpoints-app",
+  "version": "0.0.1",
+  "description": "App to show and test the express's endpoints api",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rocksfenix/express-endpoints-app.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "endpoints",
+    "list",
+    "show",
+    "client"
+  ],
+  "author": "Gerardo Gallegos <puxerop@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rocksfenix/express-endpoints-app/issues"
+  },
+  "homepage": "https://github.com/rocksfenix/express-endpoints-app#readme",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "express": "^4.17.1",
+    "express-list-endpoints": "^4.0.1"
+  },
+  "devDependencies": {}
+}
