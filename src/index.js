@@ -1,12 +1,16 @@
 const chalk = require('chalk')
 const listEndpoints = require('express-list-endpoints')
 const express = require('express')
+const getPort = require('get-port')
 
-const PORT = 7070
+const DEFAULT_PORT = 7070
 
-const run = (wrappedExpressApp, port) => {
+const run = async (wrappedExpressApp, port) => {
   const endPoints = listEndpoints(wrappedExpressApp)
   const app = express()
+  
+  // Will use 7070 if available, otherwise fall back to a random port
+  const PORT = await getPort({ port: DEFAULT_PORT })
 
   // Build html File
   const htmlContens = `
@@ -53,7 +57,7 @@ const run = (wrappedExpressApp, port) => {
   
   app.listen(PORT, () => {
     console.log(
-      chalk.green(`⚡  GO: http://localhost:${PORT}`)
+      chalk.cyan(`⚡  Enpoints App: http://localhost:${PORT}`)
     )
   })
 }
