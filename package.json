@@ -30,8 +30,13 @@
     "express": "^4.17.1",
     "express-list-endpoints": "^4.0.1",
     "get-port": "^5.1.1",
-    "livereload-js": "^3.2.1",
-    "livereload-server": "^0.2.3"
+    "livereload": "^0.9.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "standard": "^14.3.1"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  }
 }

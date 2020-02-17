@@ -2,7 +2,8 @@ const chalk = require('chalk')
 const listEndpoints = require('express-list-endpoints')
 const express = require('express')
 const getPort = require('get-port')
-const livereload = require('./live')
+const livereload = require('livereload')
+
 
 const DEFAULT_PORT = 7070
 
@@ -11,7 +12,9 @@ const run = async (wrappedExpressApp, port) => {
   const app = express()
   const portSocket = 35728
 
-  livereload(portSocket)
+  livereload.createServer({
+    port: portSocket
+  })
   
   // Will use 7070 if available, otherwise fall back to a random port
   const PORT = await getPort({ port: DEFAULT_PORT })
