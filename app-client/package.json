@@ -8,9 +8,9 @@
     "react-favicon": "0.0.17",
     "react-grid-system": "^6.2.1",
     "react-helmet": "^5.2.1",
-    "react-plyr": "^2.2.0",
     "react-toastify": "^5.5.0",
     "react-toggle-button": "^2.2.0",
+    "socket.io-client": "^2.3.0",
     "styled-components": "^5.0.1"
   },
   "devDependencies": {

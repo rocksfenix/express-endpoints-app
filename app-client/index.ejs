@@ -11,30 +11,8 @@
     <% if(env === 'production'){ %>
         <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
         <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-        {{{DATA HERE}}}
-      <% } else{ %>  
-        <script>
-            // Data
-            window.__CLIPY_DATA__ = {
-                "videos": [
-                    {
-                        "title": "01-video-example.mp4",
-                        "src": "./01-video-example.mp4"
-                    },
-                    {
-                        "title": "02-video-example.mp4",
-                        "src": "./02-video-example.mp4"
-                    },
-                    {
-                        "title": "03-video-example.mp4",
-                        "src": "./03-video-example.mp4"
-                    }
-                ],
-                "coverImage": "./cover.png",
-                "title": "Example Playlist"
-            }
-        </script>
-     <% } %>
+    <% }%>
+    {{{DATA WILL BE HERE}}}
   <div id="app"></div>
 </body>
 </html>
