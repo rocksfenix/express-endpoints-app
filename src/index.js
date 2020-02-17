@@ -4,7 +4,6 @@ const express = require('express')
 const getPort = require('get-port')
 const livereload = require('livereload')
 
-
 const DEFAULT_PORT = 7070
 
 const run = async (wrappedExpressApp, port) => {
@@ -15,7 +14,7 @@ const run = async (wrappedExpressApp, port) => {
   livereload.createServer({
     port: portSocket
   })
-  
+
   // Will use 7070 if available, otherwise fall back to a random port
   const PORT = await getPort({ port: DEFAULT_PORT })
   const host = 'localhost'
@@ -62,18 +61,16 @@ const run = async (wrappedExpressApp, port) => {
   </body>
   </html>
   `
-  
+
   app.get('*', (req, res) => {
     res.send(htmlContens)
   })
-  
+
   app.listen(PORT, () => {
     console.log(
       chalk.cyan(`⚡  Enpoints App: http://localhost:${PORT}`)
     )
   })
 }
-
-
 
 module.exports = run

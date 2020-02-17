@@ -1,0 +1,39 @@
+{
+  "name": "express-endpoints-client-app",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-favicon": "0.0.17",
+    "react-grid-system": "^6.2.1",
+    "react-helmet": "^5.2.1",
+    "react-plyr": "^2.2.0",
+    "react-toastify": "^5.5.0",
+    "react-toggle-button": "^2.2.0",
+    "styled-components": "^5.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.2",
+    "html-webpack-inline-source-plugin": "^1.0.0-beta.2",
+    "html-webpack-plugin": "^4.0.0-beta.4",
+    "style-loader": "^1.1.3",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2"
+  },
+  "scripts": {
+    "dev": "webpack-dev-server --config webpack.config.dev.js",
+    "build": "webpack --config webpack.config.prod.js"
+  },
+  "keywords": [],
+  "author": "Gerardo Gallegos <puxerop@gmail.com>",
+  "license": "MIT"
+}

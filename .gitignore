@@ -1,1 +1,8 @@
+# Dependencies
 node_modules
+
+# React App dependencies
+app-client/node_modules
+
+# dist app
+app-client/dist
